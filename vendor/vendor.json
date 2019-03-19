@@ -1,6 +1,19 @@
 {
 	"comment": "",
 	"ignore": "test",
-	"package": [],
+	"package": [
+		{
+			"checksumSHA1": "PTjdwVQCZP870BNHcMkktJcQhG8=",
+			"path": "github.com/jinzhu/gorm",
+			"revision": "8b07437717e71c2ff00602ae19f8353ba10aafbb",
+			"revisionTime": "2019-03-10T12:17:21Z"
+		},
+		{
+			"checksumSHA1": "4eelJOSLZoDzLuaJvgilOBVNovU=",
+			"path": "github.com/jinzhu/inflection",
+			"revision": "04140366298a54a039076d798123ffa108fff46c",
+			"revisionTime": "2018-03-08T03:36:59Z"
+		}
+	],
 	"rootPath": "github.com/MalikovSoft/coverted_ctx_links_validator"
 }
