@@ -18,7 +18,7 @@ func main() {
 
 	XMLs := opencms.GetAllOpenCMSNews("./files-to-convert/")
 	_, linksFromDatabase := database.GetAllLinksToResources(db)
-	outputXMLs := make(map[string]*opencms.OpenCMSNewsBlocks, 0)
+	outputXMLs := make(map[string]*opencms.OpenCMSNewsBlocks)
 
 	for fullFilename, currentXML := range XMLs {
 		currentXML.XMLSchemaLocation = `opencms://system/modules/ru.soft.malikov.web/schemas/NewsBlock.xsd`
@@ -39,5 +39,11 @@ func main() {
 			}
 
 		})
+		currentXML.NewsBlock.FullDescription.Content.Value, _ = htmlCtx.Html()
+		outputXMLs[fullFilename] = currentXML
+	}
+
+	if len(outputXMLs) > 0 {
+		opencms.ChangeXMLFiles(outputXMLs)
 	}
 }
